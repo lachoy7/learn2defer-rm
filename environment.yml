@@ -1,0 +1,30 @@
+# Micromamba environment for learn2defer-rm.
+#
+# Create (first time):
+#   micromamba env create -f environment.yml
+#
+# Update an existing `l2d` env and install this repo:
+#   micromamba env update -n l2d -f environment.yml --prune
+#   micromamba run -n l2d pip install -e ".[modal]"
+#
+# Activate:
+#   micromamba activate l2d
+
+name: l2d
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy>=1.26
+  - pandas>=2.0
+  - matplotlib>=3.8
+  - scikit-learn>=1.0
+  - tqdm>=4.66
+  - pip:
+      - torch>=2.0
+      - datasets>=3.0
+      - transformers>=4.45
+      - wandb>=0.16
+      - modal>=0.70
+      - python-dotenv
